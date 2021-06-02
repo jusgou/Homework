@@ -10,4 +10,4 @@
 ### 7. Classification (0503)
 ### 8. NLP (0510)
 ### 9. AWS (0517) [Incomplete]
-### 10. Deep_Learning (0529)
+### 10. Deep_Learning (0529) Navigate to 'starter_code' folder and find the LSTM Price Predictor notebook complete
