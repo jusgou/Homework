@@ -9,3 +9,5 @@
 ### 6. Time_Series (0426): Time Series (2021-04-26): This assignment contains two notebooks time_series_analysis.ipynb and regression_analysis.ipynb
 ### 7. Classification (0503)
 ### 8. NLP (0510)
+### 9. AWS (0517) [Incomplete]
+### 10. Deep_Learning (0529)
