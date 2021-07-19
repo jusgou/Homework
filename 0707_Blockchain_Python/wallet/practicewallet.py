@@ -14,15 +14,16 @@ mnemonic=os.getenv("mnemonic")
 # # Import constants.py and necessary functions from bit and web3
 from constants import *
  
+mnemonic = "twelve enforce skin bag choice alcohol club organ item rebel enlist idle"
  
 # # Create a function called `derive_wallets`
-def derive_wallets(mnemonic):
-    command = f'./derive  -g --mnemonic={mnemonic} --cols=path,address,privkey,pubkey --format=json --coin={ETH} --numderive=3'
-    print(command)
-    p = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
-    (output, err) = p.communicate()
-    p_status = p.wait()
-    return json.loads(output)
+
+command = f'./derive  -g --mnemonic="{mnemonic}" --cols=path,address,privkey,pubkey --format=json --coin={ETH} --numderive=3'
+    
+p = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
+(output, err) = p.communicate()
+p.wait()
+
 print(output)
 
 # # Create a dictionary object called coins to store the output from `derive_wallets`.

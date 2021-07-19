@@ -1,0 +1,19 @@
+export MSYS=winsymlinks:nativestrict
+
+Symlink creates a shortcut to fulfill a command
+
+ln -s hd-wallet-derive/hd-wallet-derive.php derive
+
+./derive -g --mnemonic="twelve enforce skin bag choice alcohol club organ item rebel enlist idle" --cols=path, address, privkey,pubkey
+
+-g (flag)=> GO or generate
+--mnemonic => want to use your own mnemonic
+--coin (parameter) => specific which coin (from the SLOP44 registry) to generate address for. for HWK and activities, we use either 'eth', 'btc', 'btc-test'
+--cols (parameters) => specify which columns to output
+--format (parameter) => we want the format to be JSON because JSON is key-value pairs and therefore easy to manipulate and access values
+--numderive(parameter) => specify how many child address to use (can generate as many as you like)
+
+using online tool vs using terminal vs using python
+*why do we want to use CLI version instead of online tool - we don't want to use GUI and also we don't want to use another person's online application
+* if we use terminal, we can actually use a python script to connect to the CLI version and streamline the process
+* using CLI means that we have to have PHP installed (ours and on the computer that the script is running on (must be same version of PHP))
