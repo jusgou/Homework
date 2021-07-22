@@ -3,9 +3,9 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5
 
 contract AssociateProfitSplitter {
         using SafeMath for uint;
-        address payable employee_one = 0xeD6D5D69Cb75675178cDCbEA2FC5Aeff214BF84c;
-        address payable employee_two = 0x8409Da3725754017561F0412cfa919bd023e3C4f;
-        address payable employee_three = 0x476039D3eAd440D29E56436e29d88d62B23348b5;
+        address payable employee_one; //= 0x714EC318d6F66c6A7065565140f73cD12DcFf9C3;
+        address payable employee_two; // = 0x579B314592346Ed21e14eB11715B2C27E61b13B5;
+        address payable employee_three; //= 0x90dedFD14baF8B2255F706E53942A0B8E1F135FF;
     
     constructor(address payable _one, address payable _two, address payable _three) public {
         employee_one = _one;
@@ -19,15 +19,13 @@ contract AssociateProfitSplitter {
 
     function deposit() public payable {
         uint amount = msg.value.div(3);
-        _one.transfer(amount);
-        _two.transfer(amount);
-        _three.transfer(amount);
+        employee_one.transfer(amount);
+        employee_two.transfer(amount);
+        employee_three.transfer(amount);
         msg.sender.transfer(msg.value - amount * 3);
     }
 
     function() external payable {
-        
-        // @TODO: Enforce that the `deposit` function is called in the fallback function!
-        // Your code here!
+        deposit(); 
     }
 }
